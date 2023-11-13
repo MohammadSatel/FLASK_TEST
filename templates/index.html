@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +36,15 @@
             </div>
             <button type="submit" class="btn btn-primary" name="comp_submit">Submit for comp module</button>
         </form>
-
-
+    
+        {% if comp_sum_of_digits_result == "Please use simp module first." %}
+            <script>alert("Please use simp module first.");</script>
+        {% endif %}
+        
+        {% if comp_is_palindrome_result == "Please use simp module first." %}
+            <script>alert("Please use simp module first.");</script>
+        {% endif %}
+      
 
         {% if comp_sum_of_digits_result is defined %}
             <h5 class="mt-4">Results for comp module:</h5>
