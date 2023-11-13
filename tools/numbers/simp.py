@@ -1,9 +1,11 @@
-functions_called = set()
+class SimpFunctions:
+    def __init__(self):
+        self.functions_called = set()
 
-def add(x, y):
-    functions_called.add("add")
-    return x + y
+    def add(self, x, y):
+        self.functions_called.add("add")
+        return x + y
 
-def subtract(x, y):
-    functions_called.add("subtract")
-    return x - y
+    def subtract(self, x, y):
+        self.functions_called.add("subtract")
+        return x - y

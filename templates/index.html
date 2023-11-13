@@ -1,0 +1,55 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Project</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h4>Enter Numbers for simp module:</h4>
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="simp_num1">Number 1:</label>
+                <input type="number" class="form-control" id="simp_num1" name="simp_num1" required>
+            </div>
+            <div class="form-group">
+                <label for="simp_num2">Number 2:</label>
+                <input type="number" class="form-control" id="simp_num2" name="simp_num2" required>
+            </div>
+            <button type="submit" class="btn btn-primary" name="simp_submit">Submit for simp module</button>
+        </form>
+
+        {% if simp_add_result is defined %}
+            <h5 class="mt-4">Results for simp module:</h5>
+            <p>Result of add function: {{ simp_add_result }}</p>
+            <p>Result of subtract function: {{ simp_subtract_result }}</p>
+        {% endif %}
+        
+        <h4 class="mt-4">Enter Number for comp module:</h4>
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="comp_num">Number:</label>
+                <input type="number" class="form-control" id="comp_num" name="comp_num" required>
+            </div>
+            <button type="submit" class="btn btn-primary" name="comp_submit">Submit for comp module</button>
+        </form>
+
+
+
+        {% if comp_sum_of_digits_result is defined %}
+            <h5 class="mt-4">Results for comp module:</h5>
+            <p>Result of sum_of_digits function: {{ comp_sum_of_digits_result }}</p>
+            <p>Result of is_palindrome function: {{ comp_is_palindrome_result }}</p>
+        {% endif %}
+    </div>
+
+    <!--  Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
